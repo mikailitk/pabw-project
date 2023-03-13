@@ -51,7 +51,7 @@
                         @else
                             @if (auth()->user()->role == 2)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('users.index') }}">Users</a>
+                                    <a class="nav-link" href="{{ route('users.index') }}">Admin Control</a>
                                 </li>
                             @endif
                             <li class="nav-item dropdown">

@@ -12,7 +12,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::where('role', 0)->orWhere('role', 1)->get();
 
         return view('users.index', compact('users'));
     }
@@ -65,20 +65,20 @@ class UsersController extends Controller
         //
     }
 
-    public function addwallet(Request $request, $id)
-    {
-        $users = User::findOrFail($id);
-        $users->wallet = $users->wallet + $request['wallet'];
-      
-        $users->save();
-      
-        return redirect()->route('users.index')->with('success','Successfuly add wallet');
-    }
-
     public function getwallet($id)
     {
         $users = User::findOrFail($id);
         
         return view('users.wallet',compact('users'));
+    }
+
+    public function addwallet(Request $request, $id)
+    {
+        $users = User::findOrFail($id);
+        $users->wallet = $request['wallet'];
+      
+        $users->save();
+      
+        return redirect()->route('users.index')->with('success','Successfuly edit wallet');
     }
 }
