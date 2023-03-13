@@ -16,8 +16,6 @@ return new class extends Migration
             $table->integer('id_user')->unsigned();
             $table->string('nama_mitra');
             $table->string('nama_brand');
-            $table->enum('jenis_mitra', ['Maskapai', 'Hotel']);
-            $table->string('nama_pemilik');
             $table->text('alamat_mitra');
             $table->string('email_mitra');
             $table->string('telp_mitra');

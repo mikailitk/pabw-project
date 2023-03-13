@@ -25,18 +25,21 @@
                             <td>{{ $u->role == 0 ? 'Pengguna Biasa' : 'Pemilik Mitra' }}</td>
                             <td>{{ $u->wallet }}</td>
                             <td>
-                            <a class="btn btn-info" href="{{ route('users.wallet', $u->id) }}">Wallet</a>
-                                <!-- <form action="{{ route('users.destroy', $u->id) }}" method="POST">
-                                    <a class="btn btn-info" href="{{ route('users.show',$u->id) }}">Show</a>
+                                <form action="{{ route('users.destroy', $u->id) }}" method="POST">
+                                    <!-- <a class="btn btn-info" href="{{ route('users.show',$u->id) }}">Show</a> -->
+                                    <a class="btn btn-info" href="{{ route('users.wallet', $u->id) }}">Wallet</a>
                                     <a class="btn btn-primary" href="{{ route('users.edit',$u->id) }}">Edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
-                                </form> -->
+                                </form>
                             </td>
                         </tr>
                         @endforeach
                     </table>
+                    <div class="float-end">
+                        <a class="btn btn-primary" href="{{ route('users.create') }}">New</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,32 +54,37 @@
                     <table class="table table-bordered">
                         <tr>
                             <th>ID</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Status</th>
-                            <th>Wallet</th>
+                            <th>Nama Mitra</th>
+                            <th>Nama Brand</th>
+                            <th>Pemilik</th>
+                            <th>Alamat Mitra</th>
+                            <th>Email Mitra</th>
+                            <th>No Telp Mitra</th>
                             <th>Action</th>
                         </tr>
-                        @foreach ($users as $u) 
+                        @foreach ($mitras as $m) 
                         <tr>
-                            <td>{{ $u->id }}</td>
-                            <td>{{ $u->nama_user }}</td>
-                            <td>{{ $u->email_user }}</td>
-                            <td>{{ $u->role == 0 ? 'Pengguna Biasa' : 'Pemilik Mitra' }}</td>
-                            <td>{{ $u->wallet }}</td>
+                            <td>{{ $m->id }}</td>
+                            <td>{{ $m->nama_mitra }}</td>
+                            <td>{{ $m->nama_brand }}</td>
+                            <td>{{ $m->owner->nama_user }}</td>
+                            <td>{{ $m->alamat_mitra }}</td>
+                            <td>{{ $m->email_mitra }}</td>
+                            <td>{{ $m->telp_mitra }}</td>
                             <td>
-                            <a class="btn btn-info" href="{{ route('users.wallet', $u->id) }}">Wallet</a>
-                                <!-- <form action="{{ route('users.destroy', $u->id) }}" method="POST">
-                                    <a class="btn btn-info" href="{{ route('users.show',$u->id) }}">Show</a>
-                                    <a class="btn btn-primary" href="{{ route('users.edit',$u->id) }}">Edit</a>
+                                <form action="{{ route('mitras.destroy', $m->id) }}" method="POST">
+                                    <a class="btn btn-info" href="{{ route('mitras.edit', $m->id) }}">Edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
-                                </form> -->
+                                </form>
                             </td>
                         </tr>
                         @endforeach
                     </table>
+                    <div class="float-end">
+                        <a class="btn btn-primary" href="{{ route('mitras.create') }}">New</a>
+                    </div>
                 </div>
             </div>
         </div>
