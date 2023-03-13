@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth', 'user-access:0'])->group(function(){
+    Route::get('/user', [HomeController::class, 'userIndex'])->name('home.user');
+});
+
+Route::middleware(['auth', 'user-access:1'])->group(function(){
+    Route::get('/mitra', [HomeController::class, 'mitraIndex'])->name('home.mitra');
+});
+
+Route::middleware(['auth', 'user-access:2'])->group(function(){
+    Route::get('/admin', [HomeController::class, 'adminIndex'])->name('home.admin');
 });
