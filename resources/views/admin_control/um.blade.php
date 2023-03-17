@@ -11,9 +11,9 @@
                     <table class="table table-bordered">
                         <tr>
                             <th>ID</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>Status</th>
+                            <th>Nama User</th>
+                            <th>Email User</th>
+                            <th>Jenis User</th>
                             <th>Wallet</th>
                             <th>Action</th>
                         </tr>

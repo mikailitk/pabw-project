@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\AdminControlController;
+use App\Http\Controllers\KursiController;
+use App\Http\Controllers\KamarController;
+use App\Http\Controllers\PemesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,19 +39,28 @@ Route::middleware(['auth', 'user-access:1'])->group(function(){
 Route::middleware(['auth', 'user-access:2'])->group(function(){
     Route::get('/admin', [HomeController::class, 'adminIndex'])->name('home.admin');
 
-    // users control
-    Route::get('/users', [UsersController::class, 'index'])->name('users.index');
-    Route::get('/users/create', [UsersController::class, 'create'])->name('users.create');
-    Route::post('/users/store', [UsersController::class, 'store'])->name('users.store');
-    Route::get('/users/{id}/edit', [UsersController::class, 'edit'])->name('users.edit');
-    Route::put('/users/{id}/update', [UsersController::class, 'update'])->name('users.update');
-    Route::get('/users/{id}/show', [UsersController::class, 'show'])->name('users.show');
-    Route::delete('/users/{id}/destroy', [UsersController::class, 'destroy'])->name('users.destroy');
+    // admin control
+    Route::get('/admin-control', [AdminControlController::class, 'user_mitra'])->name('adminc.um');
+    Route::get('/product-control', [AdminControlController::class, 'hotel_pesawat'])->name('adminc.hp');
 
+    // wallet control
     Route::get('/users/{id}/wallet', [UsersController::class, 'getwallet'])->name('users.wallet');
-    Route::put('/users/{id}', [UsersController::class, 'addwallet'])->name('users.addwallet');
-    
+    Route::put('/users/{id}/', [UsersController::class, 'addwallet'])->name('users.addwallet');
 
+    // users contrl
+    Route::resource('users' , UsersController::class);
+    
     // mitra control
     Route::resource('mitras' , MitraController::class);
+
+    // kursi control
+    Route::resource('kursis' , KursiController::class);
+
+    // kamar control
+    Route::resource('kamars' , KamarController::class);
+
+    // pemesanan control
+    Route::resource('pemesanans' , PemesananController::class);
+
+
 });

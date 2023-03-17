@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kamar;
+use App\Models\Kamar;   
+use App\Models\Pemesanan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class KamarController extends Controller
 {
@@ -20,7 +22,7 @@ class KamarController extends Controller
      */
     public function create()
     {
-        //
+        return view('kamars.create');
     }
 
     /**
@@ -28,7 +30,33 @@ class KamarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lastid = Kamar::max('id') + 1;
+        $get_mitra_id = Auth::user()->id;
+        $get_mitra_jenis = 'Perhotelan';
+        $status = 'Tersedia';
+
+        $request->validate([
+            'no_ruangan' => ['required'],
+            'kapasitas_ruangan' => ['required'],
+            'tipe_ruangan' => ['required'],
+            'harga' => ['required', 'numeric'],
+        ]);
+      
+        Kamar::create([
+            'no_ruangan' => $request['no_ruangan'],
+            'kapasitas_ruangan' => $request['kapasitas_ruangan'],
+            'tipe_ruangan' => $request['tipe_ruangan'],
+        ]);
+
+        Pemesanan::create([
+            'id_mitra' => $get_mitra_id,
+            'id_produk' => $lastid,
+            'jenis_mitra' => $get_mitra_jenis,
+            'harga'=> $request['harga'],
+            'status' => $status,
+        ]);
+       
+        return redirect()->route('adminc.hp')->with('success','Success');
     }
 
     /**

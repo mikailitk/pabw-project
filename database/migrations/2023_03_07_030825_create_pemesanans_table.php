@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->integer('id_mitra')->unsigned();
             $table->integer('id_produk')->unsigned();
-            $table->enum('jenis_mitra', ['Maskapai', 'Hotel']);
+            $table->string('jenis_mitra');
             $table->integer('harga')->unsigned();
-            $table->enum('status', ['Tersedia', 'Tidak Tersedia']);
+            $table->string('status');
             $table->timestamps();
         });
     }

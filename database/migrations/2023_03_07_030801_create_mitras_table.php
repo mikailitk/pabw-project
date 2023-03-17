@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('id_user')->unsigned();
             $table->string('nama_mitra');
             $table->string('nama_brand');
+            $table->string('jenis_mitra');
             $table->text('alamat_mitra');
             $table->string('email_mitra');
             $table->string('telp_mitra');

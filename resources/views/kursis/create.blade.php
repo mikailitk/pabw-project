@@ -5,12 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Wallet Control</div>
+                <div class="card-header">Add Kursi</div>
    
                 <div class="card-body">
-                    <form action="{{ route('users.addwallet', $users) }}" method="POST">
+                    <form action="{{ route('kursis.store') }}" method="POST">
                         @csrf
-                        @method('PUT')
                     
                         <div class="row">
                             @if ($errors->any())
@@ -23,24 +22,31 @@
                                     </ul>
                                 </div>
                             @endif
-                            {{ $users }} 
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Nama :</strong>
-                                    <input type="text" class="form-control" value="{{ $users->nama_user }}" disabled>
+                                    <strong>No Kursi :</strong>
+                                    <input type="text" name="no_kursi" class="form-control" placeholder="No Kursi">
                                 </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Wallet :</strong>
-                                    <input type="text" class="form-control" value="Rp. {{ $users->wallet }}" disabled>
+                                    <strong>Waktu Berangkat :</strong>
+                                    <input type="datetime-local" name="waktu_berangkat" class="form-control" placeholder="Waktu berangkat">
                                 </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Change to :</strong>
-                                    <input type="text" name="wallet" class="form-control" placeholder="Change To">
+                                    <strong>Waktu Sampai :</strong>
+                                    <input type="datetime-local" name="waktu_sampai" class="form-control" placeholder="Waktu Sampai">
+                                </div>
+                                <div class="form-group">
+                                    <strong>Tempat Asal :</strong>
+                                    <input type="text" name="tempat_asal" class="form-control" placeholder="Tempat Asal">
+                                </div>
+                                <div class="form-group">
+                                    <strong>Tempat Tujuan :</strong>
+                                    <input type="text" name="tempat_tujuan" class="form-control" placeholder="Tempat Tujuan">
+                                </div>
+                                <div class="form-group">
+                                    <strong>Harga :</strong>
+                                    <input type="text" name="harga" class="form-control" placeholder="Harga">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">

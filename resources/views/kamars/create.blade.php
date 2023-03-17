@@ -5,12 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Wallet Control</div>
+                <div class="card-header">Add Kamar</div>
    
                 <div class="card-body">
-                    <form action="{{ route('users.addwallet', $users) }}" method="POST">
+                    <form action="{{ route('kamars.store') }}" method="POST">
                         @csrf
-                        @method('PUT')
                     
                         <div class="row">
                             @if ($errors->any())
@@ -23,24 +22,27 @@
                                     </ul>
                                 </div>
                             @endif
-                            {{ $users }} 
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Nama :</strong>
-                                    <input type="text" class="form-control" value="{{ $users->nama_user }}" disabled>
+                                    <strong>No Ruangan :</strong>
+                                    <input type="text" name="no_ruangan" class="form-control" placeholder="No Ruangan">
                                 </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Wallet :</strong>
-                                    <input type="text" class="form-control" value="Rp. {{ $users->wallet }}" disabled>
+                                    <strong>Kapasitas Ruangan :</strong>
+                                    <input type="number" name="kapasitas_ruangan" class="form-control" placeholder="Kapasitas Ruangan">
                                 </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Change to :</strong>
-                                    <input type="text" name="wallet" class="form-control" placeholder="Change To">
+                                    <strong>Tipe Ruangan :</strong>
+                                    <select name="tipe_ruangan" class="form-control">
+                                        <option value="" selected disabled>Pilih Tipe Ruangan</option>
+                                        <option value="Room">Room</option>
+                                        <option value="Suite">Suite</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <strong>Harga :</strong>
+                                    <input type="text" name="harga" class="form-control" placeholder="Harga">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-3">

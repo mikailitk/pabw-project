@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('id_pemesanan')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->integer('total_bayar')->unsigned();
-            $table->enum('status_bayar', ['Lunas', 'Belum Lunas']);
+            $table->string('status_bayar');
             $table->datetime('tgl_dl');
             $table->datetime('tgl_bayar');
             $table->timestamps();

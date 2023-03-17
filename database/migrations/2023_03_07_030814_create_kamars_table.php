@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('no_ruangan');
             $table->integer('kapasitas_ruangan')->unsigned();
-            $table->string('alamat_mitra');
-            $table->enum('tipe_ruangan', ['Suite', 'Room']);
+            $table->string('tipe_ruangan');
             $table->timestamps();
         });
     }

@@ -14,10 +14,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::where('role', 0)->orWhere('role', 1)->get();
-        $mitras = Mitra::all();
-
-        return view('users.index', compact('users', 'mitras'));
+        //
     }
 
     /**
@@ -51,7 +48,7 @@ class UsersController extends Controller
             'alamat_user' => $request['alamat_user'],
         ]);
        
-        return redirect()->route('users.index')->with('success','Success');
+        return redirect()->route('adminc.um')->with('success','Success');
     }
 
     /**
@@ -89,7 +86,7 @@ class UsersController extends Controller
 
         $users->update($request->all());
 
-        return redirect()->route('users.index')->with('success','Success');
+        return redirect()->route('adminc.um')->with('success','Success');
     }
 
     /**
@@ -101,7 +98,7 @@ class UsersController extends Controller
 
         $users->delete();
 
-        return redirect()->route('users.index')->with('success','Success');
+        return redirect()->route('adminc.um')->with('success','Success');
     }
 
     public function getwallet($id)
@@ -111,13 +108,14 @@ class UsersController extends Controller
         return view('users.wallet',compact('users'));
     }
 
-    public function addwallet(Request $request, $id)
+    public function addwallet(Request $request, User $users)
     {
-        $users = User::findOrFail($id);
-        $users->wallet = $request['wallet'];
+        $request->validate([
+            'wallet' => 'required',
+        ]);
+
+        $users->update(['wallet' => $request->wallet]);
       
-        $users->save();
-      
-        return redirect()->route('users.index')->with('success','Successfuly edit wallet');
+        return redirect()->route('adminc.um')->with('success','Successfuly edit wallet');
     }
 }
