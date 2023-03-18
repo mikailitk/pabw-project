@@ -11,13 +11,9 @@ const First = () => {
 
 	return (
 		<>
-			<div className="-z-20 fixed flex h-screen w-1/2 bg-fixed bg-[url('https://images5.alphacoders.com/349/349822.jpg')]">
+			<div className="-z-10 fixed flex h-screen w-1/2 bg-fixed bg-[url('https://images5.alphacoders.com/349/349822.jpg')]">
 				<div className="flex flex-col mt-28 gap-4">
-					<img
-						className="flex h-40"
-						src="../src/assets/react.svg"
-						alt="logo"
-					/>
+					<img className="flex h-40" src="../src/assets/react.svg" alt="logo" />
 					<p className="mt-4 mx-20 text-white text-2xl lg:text-4xl">
 						Kami hadir membantu Anda menemukan kamar hotel dan tiket pesawat
 						terbaik untuk Anda!
@@ -25,7 +21,7 @@ const First = () => {
 				</div>
 			</div>
 
-			<ul className="z-10 mt-40 flex flex-col justify-center items-center object-center gap-10">
+			<ul className="z-20 mt-40 flex flex-col justify-center items-center object-center gap-10">
 				<li
 					id="btnKamar"
 					className={`btn ${activeButton === "btnKamar" ? "active" : ""}`}

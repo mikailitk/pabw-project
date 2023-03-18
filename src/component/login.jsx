@@ -15,7 +15,7 @@ const Login = ({ handleLogin }) => {
 						alt="Workflow"
 					/>
 					<h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-						Sign in to your account
+						Login
 					</h2>
 				</div>
 				<form className="mt-8 space-y-6" action="#" method="POST">
@@ -92,8 +92,16 @@ const Login = ({ handleLogin }) => {
 										aria-hidden="true"
 									/>
 								</span>
-								Sign in
+								Login
 							</button>
+						</Link>
+					</div>
+					<div className="text-sm">
+						Belum punya akun?{" "}
+						<Link
+							to="/signup"
+							className="font-medium text-indigo-600 hover:text-indigo-500">
+							Daftar Sekarang!
 						</Link>
 					</div>
 				</form>
