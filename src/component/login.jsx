@@ -96,14 +96,6 @@ const Login = ({ handleLogin }) => {
 							</button>
 						</Link>
 					</div>
-					<div className="text-sm">
-						Belum punya akun?{" "}
-						<Link
-							to="/signup"
-							className="font-medium text-indigo-600 hover:text-indigo-500">
-							Daftar Sekarang!
-						</Link>
-					</div>
 				</form>
 			</div>
 		</div>
