@@ -1,13 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = ({ isLoggedIn }) => {
+	const location = useLocation();
 	const [activeButton, setActiveButton] = useState(null);
 
 	const handleButtonClick = (id) => {
 		setActiveButton(id);
 	};
+
+	const handleOtherButtonClick = () => {
+		setActiveButton(null);
+	};
+
+	useEffect(() => {
+		// Update active button state based on current URL path
+		switch (location.pathname) {
+			case "/kamarhotel":
+				setActiveButton("btonKamar");
+				break;
+			case "/tiketpesawat":
+				setActiveButton("btonTiket");
+				break;
+			// Add other cases for other paths/buttons here
+			default:
+				setActiveButton(null);
+				break;
+		}
+	}, [location.pathname]);
 
 	return (
 		<header className="z-50 fixed w-full flex items-center justify-between px-6 py-4 bg-white shadow">
@@ -19,34 +40,47 @@ const Header = ({ isLoggedIn }) => {
 			</Link>
 			<nav className="flex items-center">
 				<ul className="flex items-center">
-					<li className="mx-4">
-						<a
-							id="btonKamar"
-							className={`bton ${activeButton === "btonKamar" ? "active" : ""}`}
-							onClick={() => handleButtonClick("btonKamar")}
-							href="#">
-							Kamar Hotel
-						</a>
-					</li>
-					<li className="mx-4">
-						<a
-							id="btonTiket"
-							className={`bton ${activeButton === "btonTiket" ? "active" : ""}`}
-							onClick={() => handleButtonClick("btonTiket")}
-							href="#">
-							Tiket Pesawat
-						</a>
-					</li>
+					<Link to="/kamarhotel">
+						<li className="mx-4">
+							<div
+								id="btonKamar"
+								className={`bton ${
+									activeButton === "btonKamar" ? "active" : ""
+								}`}
+								onClick={() => handleButtonClick("btonKamar")}
+								href="#">
+								Kamar Hotel
+							</div>
+						</li>
+					</Link>
+					<Link to="/tiketpesawat">
+						<li className="mx-4">
+							<div
+								id="btonTiket"
+								className={`bton ${
+									activeButton === "btonTiket" ? "active" : ""
+								}`}
+								onClick={() => handleButtonClick("btonTiket")}
+								href="#">
+								Tiket Pesawat
+							</div>
+						</li>
+					</Link>
 				</ul>
 				<div className="ml-4">
 					{isLoggedIn ? (
 						<>
 							<div>
-								<button
-									className="px-4 py-2 text-white bg-blue-500 border border-blue-500 rounded-md hover:bg-blue-600"
-									href="#">
-									Dompetku
-								</button>
+								<Link to="/dompetku">
+									<button
+										onClick={() => {
+											handleOtherButtonClick();
+										}}
+										className="px-4 py-2 text-white bg-blue-500 border border-blue-500 rounded-md hover:bg-blue-600"
+										href="#">
+										Dompetku
+									</button>
+								</Link>
 							</div>
 						</>
 					) : null}

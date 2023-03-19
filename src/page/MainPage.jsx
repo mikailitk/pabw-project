@@ -12,7 +12,7 @@ const MainPage = () => {
 	};
 	return (
 		<>
-			<ul className="fixed inset-0 z-20 flex flex-col items-center justify-center gap-10">
+			<ul className="fixed inset-0 z-20 flex flex-col items-center justify-center w-auto h-auto gap-10">
 				<li
 					id="btnKamar"
 					className={`btn ${activeButton === "btnKamar" ? "active" : ""}`}

@@ -1,3 +1,10 @@
+Catatan : 
+ tambahin :
+  halaman transaksi, terutama logika untuk membatalkan transaksi atau booking
+  bagusin halaman dompet
+  tambahin halaman info kamar hotel dan tiket pesawat
+
+  bagusin halaman 
 
 	const handleLogout = () => {
 		setIsLoggedIn(false);
@@ -136,3 +143,21 @@ export default Login;
 					</div>
 
 					================================================
+const [operator, setOperator] = useState([]);
+
+  const rarity = operator.map((rarity) => {
+    const star =
+      "https://upload.wikimedia.org/wikipedia/commons/4/44/Plain_Yellow_Star.png";
+
+    const stars = [];
+
+    if (rarity._id === id) {
+      for (let i = 0; i < rarity.rarity; i++) {
+        stars.push(<img class="w-7 h-auto" key={i} src={star} alt="star" />);
+      }
+      return stars;
+    }
+  });
+
+  ==================================================
+  
