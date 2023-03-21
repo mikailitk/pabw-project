@@ -32,7 +32,7 @@ class KamarController extends Controller
     {
         $lastid = Kamar::max('id') + 1;
         $get_mitra_id = Auth::user()->id;
-        $get_mitra_jenis = 'Perhotelan';
+        $get_mitra_jenis = 'Penerbangan';
         $status = 'Tersedia';
 
         $request->validate([
@@ -72,7 +72,7 @@ class KamarController extends Controller
      */
     public function edit(Kamar $kamar)
     {
-        //
+        return view('kamars.edit', compact('kamar'));
     }
 
     /**
@@ -86,8 +86,12 @@ class KamarController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Kamar $kamar)
+    public function destroy($id)
     {
-        //
+        $pemesanan = Pemesanan::findOrFail($id);
+        $kamar = Kamar::where('id', $pemesanan->id_produk)->delete();
+        $pemesanan->delete();
+
+        return redirect()->route('adminc.hp')->with('success','Berhasil Hapus Produk');
     }
 }

@@ -75,15 +75,17 @@ class KursiController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Kursi $kursi)
+    public function edit($id)
     {
-        return view('kursis.edit', compact('kursi'));
+        $p_kursi = Pemesanan::where('id', $id)->get();
+
+        return view('kursis.edit', compact('p_kursi'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Kursi $kursi)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -91,8 +93,12 @@ class KursiController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Kursi $kursi)
+    public function destroy($id)
     {
-        //
+        $pemesanan = Pemesanan::findOrFail($id);
+        $kursi = Kursi::where('id', $pemesanan->id_produk)->delete();
+        $pemesanan->delete();
+
+        return redirect()->route('adminc.hp')->with('success','Berhasil Hapus Produk');
     }
 }

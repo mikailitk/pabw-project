@@ -8,7 +8,7 @@
                 <div class="card-header">Edit Kursi</div>
    
                 <div class="card-body">
-                    <form action="{{ route('kursis.update', $kursi) }}" method="POST">
+                    <form action="{{ route('kursis.update', $p_kursi->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                     
@@ -26,32 +26,39 @@
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    <strong>Nama Mitra :</strong>
-                                    <input type="text" name="nama_mitra" class="form-control" placeholder="Nama Mitra" value="{{ $mitras->nama_mitra }}">
+                                    <strong>No Kursi :</strong>
+                                    <input type="text" name="no_kursi" class="form-control" placeholder="No Kursi" value="{{ $p_kursi->no_kursi }}">
                                 </div>
                                 <div class="form-group">
-                                    <strong>Nama Brand :</strong>
-                                    <input type="text" name="nama_brand" class="form-control" placeholder="Nama Brand" value="{{ $mitras->nama_brand }}">
+                                    <strong>Waktu Berangkat :</strong>
+                                    <input type="text" name="waktu_berangkat" class="form-control" placeholder="Waktu Berangkat" value="{{ $p_kursi->waktu_berangkat }}">
                                 </div>
                                 <div class="form-group">
-                                    <strong>Email Mitra :</strong>
-                                    <input type="email" name="email_mitra" class="form-control" placeholder="Email Mitra" value="{{ $mitras->email_mitra }}">
+                                    <strong>Waktu Sampai :</strong>
+                                    <input type="email" name="waktu_sampai" class="form-control" placeholder="Waktu Sampai" value="{{ $p_kursi->waktu_sampai }}">
                                 </div>
                                 <div class="form-group">
-                                    <strong>Alamat Mitra :</strong>
-                                    <input type="text" name="alamat_mitra" class="form-control" placeholder="Alamat Mitra" value="{{ $mitras->alamat_mitra }}">
+                                    <strong>Tempat Asal :</strong>
+                                    <input type="text" name="tempat_asal" class="form-control" placeholder="Tempat Asal" value="{{ $p_kursi->tempat_asal }}">
                                 </div>
                                 <div class="form-group">
-                                    <strong>No Telp Mitra :</strong>
-                                    <input type="text" name="telp_mitra" class="form-control" placeholder="No Telp Mitra" value="{{ $mitras->telp_mitra }}">
+                                    <strong>Tempat Tujuan :</strong>
+                                    <input type="text" name="tempat_tujuan" class="form-control" placeholder="Tempat Tujuan" value="{{ $p_kursi->tempat_tujuan }}">
                                 </div>
                                 <div class="form-group">
-                                    <strong>Pemilik :</strong>
-                                    <select name="id_user" class="form-control">
-                                        <option selected><-- Select User --></option>
-                                        @foreach ($users as $u)
-                                        <option value="{{ $u->id }}">{{ $u->nama_user }}</option>
-                                        @endforeach
+                                    <strong>Harga :</strong>
+                                    <input type="number" name="harga" class="form-control" placeholder="Harga" value="{{ $p_kursi->harga }}">
+                                </div>
+                                <div class="form-group">
+                                    <strong>Status :</strong>
+                                    <select name="status" class="form-control">
+                                        @if ($p_kursi->status == "Tersedia")
+                                        <option value="Tersedia" selected>Tersedia</option>
+                                        <option value="Tidak Tersedia">TIdak Tersedia</option>
+                                        @else
+                                        <option value="Tidak Tersedia" selected>Tidak Tersedia</option>
+                                        <option value="Tersedia">Tersedia</option>
+                                        @endif
                                     </select>
                                 </div>
                             </div>
