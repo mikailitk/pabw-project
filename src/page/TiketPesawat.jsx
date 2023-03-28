@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getData } from "../api/api.jsx";
 import { Link } from "react-router-dom";
 
@@ -31,9 +31,7 @@ const TiketPesawat = () => {
 
 	return (
 		<>
-			<div className="grid grid-cols-4 gap-16 m-16 mt-32">
-				{results}
-			</div>
+			<div className="grid grid-cols-4 gap-16 m-16 mt-32">{results}</div>
 		</>
 	);
 };

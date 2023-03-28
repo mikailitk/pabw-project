@@ -11,7 +11,7 @@ const First = () => {
 						alt="logo"
 					/>
 					<p className="z-30 mt-4 mx-20 text-white text-2xl lg:text-4xl">
-						Kami hadir membantu Anda menemukan{" "}
+						Kami hadir membantu menemukan{" "}
 						<b>
 							<u>kamar hotel</u>
 						</b>{" "}

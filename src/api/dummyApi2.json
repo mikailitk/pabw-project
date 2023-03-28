@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"type": "hotel",
+		"name": "Hotel A",
+		"date": "2023-04-15",
+		"price": 2000000,
+		"status": "completed"
+	},
+	{
+		"id": 2,
+		"type": "flight",
+		"name": "Flight B",
+		"date": "2023-05-10",
+		"price": 1500000,
+		"status": "completed"
+	},
+	{
+		"id": 3,
+		"type": "hotel",
+		"name": "Hotel C",
+		"date": "2023-06-01",
+		"price": 3000000,
+		"status": "upcoming"
+	}
+]

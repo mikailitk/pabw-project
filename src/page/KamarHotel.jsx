@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getData } from "../api/api.jsx";
 import { Link } from "react-router-dom";
 

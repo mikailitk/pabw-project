@@ -10,6 +10,10 @@ import KamarHotel from "./page/KamarHotel";
 import TiketPesawat from "./page/TiketPesawat";
 import Dompetku from "./page/Dompetku";
 
+import DetailKamarHotel from "./page/detailKamarHotel";
+import DetailTiketPesawat from "./page/detailTiketPesawat";
+import DetailTransaksi from "./page/detailTransaksi";
+
 const App = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -32,17 +36,19 @@ const App = () => {
 						element={<LoginPage handleLogin={handleLogin} />}
 					/>
 					<Route path="/kamarhotel" element={<KamarHotel />} />
+					<Route path="/kamarhotel/:id" element={<DetailKamarHotel />} />
 					<Route path="/tiketpesawat" element={<TiketPesawat />} />
-					<Route
-						path="/dompetku"
-						element={
-							isLoggedIn ? (
-								<Dompetku handleLogout={handleLogout} />
-							) : (
-								<Navigate to="/" replace={true} />
-							)
-						}
-					/>
+					<Route path="/tiketpesawat/:id" element={<DetailTiketPesawat />} />
+					{isLoggedIn && (
+						<>
+							<Route
+								path="/dompetku"
+								element={<Dompetku handleLogout={handleLogout} />}
+							/>
+							<Route path="/dompetku/:id" element={<DetailTransaksi />} />
+						</>
+					)}
+					<Route path="*" element={<Navigate to="/" replace={true} />} />
 				</Routes>
 			</div>
 		</div>
