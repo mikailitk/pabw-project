@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('telp_user');
             $table->string('alamat_user');
+            $table->string('token')->nullable();
             $table->integer('wallet')->default(0);
             $table->rememberToken();
             $table->timestamps();
