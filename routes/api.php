@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,12 +31,16 @@ Route::group(['middleware' => 'auth:api'], function() {
         ]);
     });
     
-    Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:api');
+    Route::post('logout', [AuthController::class, 'logout']);
 
     /**
      * 
      */
 });
+
+Route::get('kamars', [ProductController::class, 'showKamar']);
+Route::get('kursis', [ProductController::class, 'showKursi']);
+
 
 Route::get('/user', function (Request $request) {
     $data = DB::table('user')->get();
