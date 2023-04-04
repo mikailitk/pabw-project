@@ -17,6 +17,7 @@ use App\Http\Controllers\Api\AuthController;
 
 Route::post('/login', [AuthController::class, 'login']);
 
+
 Route::group(['middleware' => 'auth:api'], function() {
 
     /**
@@ -42,6 +43,11 @@ Route::get('/user', function (Request $request) {
     return response()->json([
         'data' => $data,
     ]);
+
+});
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
 
 
