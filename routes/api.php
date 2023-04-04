@@ -17,12 +17,24 @@ use App\Http\Controllers\Api\AuthController;
 
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::middleware('auth:api')->get('/data', function (Request $request) {
-    $data = DB::table('users')->get();
 
-    return response()->json([
-        'data' => $data,
-    ]);
+Route::group(['middleware' => 'auth:api'], function() {
+
+    /**
+     * Authentication API
+     */
+
+    Route::get('/check', function (Request $request) {
+        return response()->json([
+            'message' => "success",
+        ]);
+    });
+    
+    Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:api');
+
+    /**
+     * 
+     */
 });
 
 Route::get('/user', function (Request $request) {
@@ -31,8 +43,12 @@ Route::get('/user', function (Request $request) {
     return response()->json([
         'data' => $data,
     ]);
+
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
