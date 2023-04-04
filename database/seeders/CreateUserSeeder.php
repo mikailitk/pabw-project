@@ -25,7 +25,7 @@ class CreateUserSeeder extends Seeder
                'telp_user'=>'081208120812',
                'alamat_user'=>'Jl. Amogus',
                'password'=> bcrypt('12121212'),
-               'token'=> null,
+               'api_token'=> null,
                'wallet'=>0,
             ],
             [
@@ -35,7 +35,7 @@ class CreateUserSeeder extends Seeder
                 'telp_user'=>'081208120812',
                 'alamat_user'=>'Jl. Amogus',
                 'password'=> bcrypt('12121212'),
-                'token'=> null,
+                'api_token'=> null,
                 'wallet'=>0,
             ],
             [
@@ -45,7 +45,7 @@ class CreateUserSeeder extends Seeder
                'telp_user'=>'081208120812',
                'alamat_user'=>'Jl. Amogus',
                'password'=> bcrypt('12121212'),
-               'token'=> null,
+               'api_token'=> null,
                'wallet'=>0,
             ],
         ];
