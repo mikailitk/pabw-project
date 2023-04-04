@@ -24,6 +24,7 @@ class User extends Authenticatable
         'password',
         'telp_user',
         'alamat_user',
+        'token',
         'wallet',
     ];
 
