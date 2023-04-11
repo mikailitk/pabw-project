@@ -22,5 +22,74 @@
 		"date": "2023-06-01",
 		"price": 3000000,
 		"status": "upcoming"
+	},{
+		"id": 4,
+		"type": "hotel",
+		"name": "Hotel A",
+		"date": "2023-04-15",
+		"price": 2000000,
+		"status": "completed"
+	},
+	{
+		"id": 5,
+		"type": "flight",
+		"name": "Flight B",
+		"date": "2023-05-10",
+		"price": 1500000,
+		"status": "completed"
+	},
+	{
+		"id": 6,
+		"type": "hotel",
+		"name": "Hotel C",
+		"date": "2023-06-01",
+		"price": 3000000,
+		"status": "upcoming"
+	},{
+		"id": 7,
+		"type": "hotel",
+		"name": "Hotel A",
+		"date": "2023-04-15",
+		"price": 2000000,
+		"status": "completed"
+	},
+	{
+		"id": 8,
+		"type": "flight",
+		"name": "Flight B",
+		"date": "2023-05-10",
+		"price": 1500000,
+		"status": "completed"
+	},
+	{
+		"id": 9,
+		"type": "hotel",
+		"name": "Hotel C",
+		"date": "2023-06-01",
+		"price": 3000000,
+		"status": "upcoming"
+	},{
+		"id": 10,
+		"type": "hotel",
+		"name": "Hotel A",
+		"date": "2023-04-15",
+		"price": 2000000,
+		"status": "completed"
+	},
+	{
+		"id": 11,
+		"type": "flight",
+		"name": "Flight B",
+		"date": "2023-05-10",
+		"price": 1500000,
+		"status": "completed"
+	},
+	{
+		"id": 12,
+		"type": "hotel",
+		"name": "Hotel C",
+		"date": "2023-06-01",
+		"price": 3000000,
+		"status": "upcoming"
 	}
 ]

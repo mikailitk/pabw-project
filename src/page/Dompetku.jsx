@@ -55,6 +55,24 @@ const Dompetku = ({ handleLogout }) => {
 						Muat lebih banyak...
 					</Link>
 				</div>
+				<div className="w-full max-w-md bg-gray-100 rounded-md shadow-md p-4">
+					<h2 className="text-lg font-medium mb-2">Transaksi Lama</h2>
+					{results}
+				</div>
+				<div className="text-center">
+					<Link to="transaksi" className="text-blue-500 hover:underline">
+						Muat lebih banyak...
+					</Link>
+				</div>
+				<div className="w-full max-w-md bg-gray-100 rounded-md shadow-md p-4">
+					<h2 className="text-lg font-medium mb-2">Transaksi Dibatalkan</h2>
+					{results}
+				</div>
+				<div className="text-center">
+					<Link to="transaksi" className="text-blue-500 hover:underline">
+						Muat lebih banyak...
+					</Link>
+				</div>
 			</div>
 
 			<div className="min-h-full flex items-center justify-center mt-40">

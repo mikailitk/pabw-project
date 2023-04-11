@@ -77,7 +77,7 @@ const Login = ({ handleLogin }) => {
 					</div>
 
 					<div>
-						<Link to="/dompetku">
+						<Link to="/">
 							<button
 								onClick={handleClick}
 								type="submit"
