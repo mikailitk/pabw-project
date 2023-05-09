@@ -46,32 +46,40 @@ const Dompetku = ({ handleLogout }) => {
 						</p>
 					</div>
 				</div>
-				<div className="w-full max-w-md bg-gray-100 rounded-md shadow-md p-4">
-					<h2 className="text-lg font-medium mb-2">Transaksi Terbaru</h2>
-					{results}
-				</div>
-				<div className="text-center">
-					<Link to="transaksi" className="text-blue-500 hover:underline">
-						Muat lebih banyak...
-					</Link>
-				</div>
-				<div className="w-full max-w-md bg-gray-100 rounded-md shadow-md p-4">
-					<h2 className="text-lg font-medium mb-2">Transaksi Lama</h2>
-					{results}
-				</div>
-				<div className="text-center">
-					<Link to="transaksi" className="text-blue-500 hover:underline">
-						Muat lebih banyak...
-					</Link>
-				</div>
-				<div className="w-full max-w-md bg-gray-100 rounded-md shadow-md p-4">
-					<h2 className="text-lg font-medium mb-2">Transaksi Dibatalkan</h2>
-					{results}
-				</div>
-				<div className="text-center">
-					<Link to="transaksi" className="text-blue-500 hover:underline">
-						Muat lebih banyak...
-					</Link>
+				<div className="flex flex-row gap-8">
+					<div className="flex flex-col">
+						<div className="w-full max-w-md bg-gray-100 rounded-md shadow-md p-4">
+							<h2 className="text-lg font-medium mb-2">Transaksi Terbaru</h2>
+							{results}
+							<div className="text-center">
+								<Link to="transaksi" className="text-blue-500 hover:underline">
+									Muat lebih banyak...
+								</Link>
+							</div>
+						</div>
+					</div>
+					<div className="flex flex-col">
+						<div className="w-full max-w-md bg-gray-100 rounded-md shadow-md p-4">
+							<h2 className="text-lg font-medium mb-2">Transaksi Lama</h2>
+							{results}
+							<div className="text-center">
+								<Link to="transaksi" className="text-blue-500 hover:underline">
+									Muat lebih banyak...
+								</Link>
+							</div>
+						</div>
+					</div>
+					<div className="flex flex-col">
+						<div className="w-full max-w-md bg-gray-100 rounded-md shadow-md p-4">
+							<h2 className="text-lg font-medium mb-2">Transaksi Dibatalkan</h2>
+							{results}
+							<div className="text-center">
+								<Link to="transaksi" className="text-blue-500 hover:underline">
+									Muat lebih banyak...
+								</Link>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 

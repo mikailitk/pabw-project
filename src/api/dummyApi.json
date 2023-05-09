@@ -1,7 +1,6 @@
 [
 	{
 		"id": 1,
-		"thumbnail": "http://dummyimage.com/300x260.png/dddddd/000000",
 		"title": "Nakhchivan",
 		"location": "Indonesia",
 		"rating": 5,
@@ -9,7 +8,6 @@
 	},
 	{
 		"id": 2,
-		"thumbnail": "http://dummyimage.com/300x260.png/5fa2dd/ffffff",
 		"title": "Nakhchivan",
 		"location": "China",
 		"rating": 1,
@@ -17,7 +15,6 @@
 	},
 	{
 		"id": 3,
-		"thumbnail": "http://dummyimage.com/300x260.png/5fa2dd/ffffff",
 		"title": "Portugal",
 		"location": "Portugal",
 		"rating": 3,
@@ -25,7 +22,6 @@
 	},
 	{
 		"id": 4,
-		"thumbnail": "http://dummyimage.com/300x260.png/ff4444/ffffff",
 		"title": "Athens/Albany",
 		"location": "Belarus",
 		"rating": 4,
@@ -33,7 +29,6 @@
 	},
 	{
 		"id": 5,
-		"thumbnail": "http://dummyimage.com/300x260.png/dddddd/000000",
 		"title": "Mannheim",
 		"location": "Indonesia",
 		"rating": 3,
@@ -41,7 +36,6 @@
 	},
 	{
 		"id": 6,
-		"thumbnail": "http://dummyimage.com/300x260.png/dddddd/000000",
 		"title": "Wiesbaden",
 		"location": "China",
 		"rating": 3,
@@ -49,7 +43,6 @@
 	},
 	{
 		"id": 7,
-		"thumbnail": "http://dummyimage.com/300x260.png/cc0000/ffffff",
 		"title": "Camp Pohakuloa",
 		"location": "Angola",
 		"rating": 3,
@@ -57,7 +50,6 @@
 	},
 	{
 		"id": 8,
-		"thumbnail": "http://dummyimage.com/300x260.png/ff4444/ffffff",
 		"title": "Huambo",
 		"location": "France",
 		"rating": 4,
@@ -65,7 +57,6 @@
 	},
 	{
 		"id": 9,
-		"thumbnail": "http://dummyimage.com/300x260.png/dddddd/000000",
 		"title": "Debre Zeyit",
 		"location": "Mexico",
 		"rating": 5,
@@ -73,7 +64,6 @@
 	},
 	{
 		"id": 10,
-		"thumbnail": "http://dummyimage.com/300x260.png/cc0000/ffffff",
 		"title": "Bandar Lengeh",
 		"location": "Ukraine",
 		"rating": 1,
@@ -81,7 +71,6 @@
 	},
 	{
 		"id": 11,
-		"thumbnail": "http://dummyimage.com/300x260.png/dddddd/000000",
 		"title": "Garanhuns",
 		"location": "Finland",
 		"rating": 5,
@@ -89,7 +78,6 @@
 	},
 	{
 		"id": 12,
-		"thumbnail": "http://dummyimage.com/300x260.png/cc0000/ffffff",
 		"title": "Portugal",
 		"location": "Russia",
 		"rating": 5,
@@ -97,7 +85,6 @@
 	},
 	{
 		"id": 13,
-		"thumbnail": "http://dummyimage.com/300x260.png/5fa2dd/ffffff",
 		"title": "Watertown",
 		"location": "Czech Republic",
 		"rating": 2,
@@ -105,7 +92,6 @@
 	},
 	{
 		"id": 14,
-		"thumbnail": "http://dummyimage.com/300x260.png/cc0000/ffffff",
 		"title": "Attopeu",
 		"location": "China",
 		"rating": 3,
@@ -113,7 +99,6 @@
 	},
 	{
 		"id": 15,
-		"thumbnail": "http://dummyimage.com/300x260.png/cc0000/ffffff",
 		"title": "Maseru",
 		"location": "Saint Barthelemy",
 		"rating": 1,
@@ -121,7 +106,6 @@
 	},
 	{
 		"id": 16,
-		"thumbnail": "http://dummyimage.com/300x260.png/5fa2dd/ffffff",
 		"title": "Araxá",
 		"location": "Indonesia",
 		"rating": 2,
