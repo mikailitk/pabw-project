@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+	@apply flex text-center text-2xl cursor-pointer hover:bg-white py-2 px-5 rounded-xl bg-[#D9D9D9] hover:text-[#010440];
+}
+
+.btn.active {
+	background-color: #ffffff;
+	color: #010440;
+}
+
+.bton {
+	@apply text-gray-900 hover:text-gray-600;
+}
+.bton.active {
+	background-color: #ADD8E6;
+	padding: 10px;
+	border-radius: 10px;
+	color: #000000;
+}
