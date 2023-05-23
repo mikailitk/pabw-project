@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Models\User;
+
 class AuthController extends Controller
 {
     /**
@@ -30,5 +32,14 @@ class AuthController extends Controller
                 'error' => 'Unauthorized'
             ], 401);
         }
+    }
+
+    public function wallet(Request $request)
+    {
+        $user = User::select('wallet', 'updated_at')->where('api_token',  $request->bearerToken())->first();
+
+        return response()->json([
+            'user' => $user
+        ]);
     }
 }

@@ -17,22 +17,17 @@ use App\Http\Controllers\Api\AuthController;
 
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::middleware('auth:api')->get('/data', function (Request $request) {
-    $data = DB::table('users')->get();
+Route::group(['middleware' => 'auth:api'], function() {
+    // Mengecek Uang
+    Route::get('/wallet', [AuthController::class, 'wallet']);
 
-    return response()->json([
-        'data' => $data,
-    ]);
+    // Newest Transaction (Limit 5)
+
+    // Latest Transaction (Limit 5)
+
+    // Cancel Transaction (Limit 5)
+
+    //
 });
 
-Route::get('/user', function (Request $request) {
-    $data = DB::table('user')->get();
 
-    return response()->json([
-        'data' => $data,
-    ]);
-});
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
