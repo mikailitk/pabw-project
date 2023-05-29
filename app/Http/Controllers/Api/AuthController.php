@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\User;
 
@@ -32,6 +33,17 @@ class AuthController extends Controller
                 'error' => 'Unauthorized'
             ], 401);
         }
+    }
+
+    public function logout(Request $request)
+    {
+        $user = $request->user();
+        $user->api_token = null;
+        $user->save();
+
+        return response()->json([
+            'message' => 'Successfully logged out'
+        ]);
     }
 
     public function wallet(Request $request)
