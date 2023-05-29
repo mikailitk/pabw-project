@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('database_foreign', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('kursis', function(Blueprint $table){
+            $table->foreign('id_tempat_asal')->references('id')->on('tempats');
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('database_foreign');
+        Schema::table('kursis', function(Blueprint $table){
+            $table->dropForeign(['id_tempat_asal']);
+        });
     }
 };

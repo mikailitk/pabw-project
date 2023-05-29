@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Mitra;
 use App\Models\Kursi;
+use App\Models\Tempat;
 use App\Models\Kamar;
 use App\Models\Pemesanan;
 
@@ -71,27 +72,35 @@ class CreateUserSeeder extends Seeder
             ],
         ];
 
+        $tempats = [
+            [
+                'nama_tempat' => 'Balikpapan'
+            ],
+            [
+                'nama_tempat' => 'Banjarmasin'
+            ],
+            [
+                'nama_tempat' => 'Berau'
+            ],
+            [
+                'nama_tempat' => 'Sangatta'
+            ],
+        ];
+
         $kursis = [
             [
-                'no_kursi' => 'A-1',
-                'waktu_berangkat' => '2023-03-15 19:22:50',
-                'waktu_sampai' => '2023-03-15 20:00:00',
-                'tempat_asal' => 'Balikpapan',
-                'tempat_tujuan' => 'Jakarta',
+                'id_tempat_asal' => 1,
+                'id_tempat_tujuan' => 2,
+                'no_kursi' => 'A1',
+                'waktu_berangkat' => '2023-05-30 09:00:00',
+                'waktu_sampai' => '2023-05-30 11:00:00',
             ],
             [
-                'no_kursi' => 'A-2',
-                'waktu_berangkat' => '2023-03-15 19:22:50',
-                'waktu_sampai' => '2023-03-15 20:00:00',
-                'tempat_asal' => 'Balikpapan',
-                'tempat_tujuan' => 'Jakarta',
-            ],
-            [
-                'no_kursi' => 'A-3',
-                'waktu_berangkat' => '2023-03-15 19:22:50',
-                'waktu_sampai' => '2023-03-15 20:00:00',
-                'tempat_asal' => 'Balikpapan',
-                'tempat_tujuan' => 'Jakarta',
+                'id_tempat_asal' => 2,
+                'id_tempat_tujuan' => 1,
+                'no_kursi' => 'B1',
+                'waktu_berangkat' => '2023-05-30 10:00:00',
+                'waktu_sampai' => '2023-05-30 12:00:00',
             ],
         ];
 
@@ -165,6 +174,10 @@ class CreateUserSeeder extends Seeder
 
         foreach ($mitras as $key => $mitra) {
             Mitra::create($mitra);
+        }
+
+        foreach ($tempats as $key => $tempats) {
+            Tempat::create($tempats);
         }
 
         foreach ($kursis as $key => $kursi) {

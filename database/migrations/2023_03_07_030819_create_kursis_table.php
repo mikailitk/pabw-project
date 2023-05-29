@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('kursis', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_tempat_asal')->unsigned();
-            $table->integer('id_tempat_tujuan')->unsigned();
+            $table->unsignedBigInteger('id_tempat_asal')->unsigned();
+            $table->unsignedBigInteger('id_tempat_tujuan')->unsigned();
             $table->string('no_kursi');
             $table->datetime('waktu_berangkat');
             $table->datetime('waktu_sampai');
