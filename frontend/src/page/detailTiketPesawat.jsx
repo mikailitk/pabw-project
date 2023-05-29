@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { getData } from "../api/api.jsx";
+import { getDataTiket } from "../api/api.jsx";
 
 function TiketPesawatDetail() {
 	const { id } = useParams();
@@ -10,7 +10,7 @@ function TiketPesawatDetail() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await getData();
+				const response = await getDataTiket();
 				if (response) {
 					setData(response);
 				}

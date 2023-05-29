@@ -1,23 +1,30 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { getLoginData } from "../api/api";
+import { postLoginData } from "../api/api";
 
 const Login = ({ handleLogin }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const navigate = useNavigate();
+
     const handleClick = async (e) => {
         e.preventDefault();
+
         try {
-            // Mengirim permintaan login ke API menggunakan getLoginData()
-            const response = await getLoginData({ email, password });
+            // Mengirim permintaan login ke API menggunakan postLoginData()
+            const response = await postLoginData({ email, password });
 
             // Menangani respons dari API
             // Misalnya, menyimpan token ke dalam local storage, menjalankan fungsi handleLogin, dll.
 
-            // Contoh penggunaan handleLogin:
+            const token = response.token; // asumsikan token diberikan dalam respons
+            localStorage.setItem("accessToken", token);
+
             handleLogin();
             console.log(response);
+
+            navigate("/");
         } catch (error) {
             console.error(error);
             // Menangani error, misalnya menampilkan pesan error pada halaman login
@@ -84,39 +91,19 @@ const Login = ({ handleLogin }) => {
                         </div>
                     </div>
 
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                            <input
-                                id="remember-me"
-                                name="remember-me"
-                                type="checkbox"
-                                className="h-4 w-4 text-indigo-600 focus:ring-indigo-500
-                  border-gray-300 rounded"
-                            />
-                            <label
-                                htmlFor="remember-me"
-                                className="ml-2 block text-sm text-gray-900"
-                            >
-                                Remember me
-                            </label>
-                        </div>
-                    </div>
-
                     <div>
-                        <Link to="/">
-                            {/* Tombol Login */}
-                            <button
-                                onClick={handleClick}
-                                type="submit"
-                                className="group relative w-full flex justify-center
+                        {/* Tombol Login */}
+                        <button
+                            onClick={handleClick}
+                            type="submit"
+                            className="group relative w-full flex justify-center
             py-2 px-4 border border-transparent text-sm font-medium
             rounded-md text-white bg-indigo-600 hover:bg-indigo-700
             focus:outline-none focus:ring-2 focus:ring-offset-2
             focus:ring-indigo-500"
-                            >
-                                Login
-                            </button>
-                        </Link>
+                        >
+                            Login
+                        </button>
                     </div>
                 </form>
             </div>

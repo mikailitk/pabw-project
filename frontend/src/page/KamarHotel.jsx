@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getData } from "../api/api.jsx";
+import { getDataKamar } from "../api/api.jsx";
 import { Link } from "react-router-dom";
 
 import Card from "../component/card";
@@ -17,7 +17,7 @@ const KamarHotel = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await getData();
+				const response = await getDataKamar();
 				if (response) {
 					setData(response);
 				}
