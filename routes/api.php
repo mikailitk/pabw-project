@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\TransactionController;
 
 
 /*
@@ -26,11 +27,8 @@ Route::group(['middleware' => 'auth:api'], function() {
     // Mengecek Uang
     Route::get('/wallet', [AuthController::class, 'wallet']);
 
-    // Newest Transaction (Limit 5)
-
-    // Latest Transaction (Limit 5)
-
-    // Cancel Transaction (Limit 5)
+    // Transaction (Limit 5)
+    Route::get('/transaction', [TransactionController::class, 'getTransaction']);
 
     //
 });
