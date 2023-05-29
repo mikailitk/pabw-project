@@ -51,7 +51,10 @@ class AuthController extends Controller
         $user = User::select('wallet', 'updated_at')->where('api_token',  $request->bearerToken())->first();
 
         return response()->json([
+            'message' => "Wallet retrieve successfully",
+            'error' => false,
             'user' => $user
         ]);
+
     }
 }
