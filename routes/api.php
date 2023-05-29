@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::get('/wallet', [AuthController::class, 'wallet']);
 
     // Transaction (Limit 5)
-    Route::get('/transaction', [TransactionController::class, 'getTransaction']);
+    Route::get('/pesanan', [TransactionController::class, 'getPesanan']);
 
     //
 });

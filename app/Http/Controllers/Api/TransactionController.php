@@ -9,7 +9,7 @@ use App\Models\Pemesanan;
 
 class TransactionController extends Controller
 {
-    public function getTransaction(Request $request)
+    public function getPesanan(Request $request)
     {
         $filter = $request->input('filter');
         $limit = $request->input('limit', false);
