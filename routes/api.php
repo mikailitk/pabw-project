@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,7 @@ Route::group(['middleware' => 'auth:api'], function() {
 
     // Newest Transaction (Limit 5)
 
+
     // Latest Transaction (Limit 5)
 
     // Cancel Transaction (Limit 5)
@@ -30,4 +33,6 @@ Route::group(['middleware' => 'auth:api'], function() {
     //
 });
 
+Route::get('/kursi', [ProductController::class, 'getKursi']);
+Route::get('/kamar', [ProductController::class, 'getKamar']);
 
