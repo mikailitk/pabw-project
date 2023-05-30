@@ -10,6 +10,7 @@ use App\Models\Kursi;
 use App\Models\Tempat;
 use App\Models\Kamar;
 use App\Models\Pemesanan;
+use App\Models\Transaksi;
 
 class CreateUserSeeder extends Seeder
 {
@@ -174,6 +175,32 @@ class CreateUserSeeder extends Seeder
             ],
         ];
 
+        $transaksis = [
+            [
+                'id_pemesanan' => 1,
+                'id_user' => 3,
+                'total_bayar' => 150000
+                'status_bayar' => 'Belum Lunas'
+                'tgl_dl' => '2023-05-30 10:00:00'
+                'tgl_bayar' => ''
+            ],
+            [
+                'id_pemesanan' => 2,
+                'id_user' => 3,
+                'total_bayar' => 200000
+                'status_bayar' => 'Belum Lunas'
+                'tgl_dl' => '2023-05-30 10:00:00'
+                'tgl_bayar' => ''
+            ],
+            [
+                'id_pemesanan' => 3,
+                'id_user' => 3,
+                'total_bayar' => 300000
+                'status_bayar' => 'Lunas'
+                'tgl_dl' => '2023-05-30 10:00:00'
+                'tgl_bayar' => '2023-05-15 10:00:00'
+            ],
+        ];
 
         foreach ($users as $key => $user) {
             User::create($user);
