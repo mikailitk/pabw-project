@@ -8,7 +8,7 @@
                 <div class="card-header">Edit Kursi</div>
    
                 <div class="card-body">
-                    <form action="{{ route('kursis.update', $p_kursi->id) }}" method="POST">
+                    <form action="{{ route('pemesanans.update', $p_kursi->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                     
@@ -39,11 +39,11 @@
                                 </div>
                                 <div class="form-group">
                                     <strong>Tempat Asal :</strong>
-                                    <input type="text" name="tempat_asal" class="form-control" placeholder="Tempat Asal" value="{{ $p_kursi->tempat_asal }}">
+                                    <input type="text" name="id_tempat_asal" class="form-control" placeholder="Tempat Asal" value="{{ $p_kursi->tempat_asal }}">
                                 </div>
                                 <div class="form-group">
                                     <strong>Tempat Tujuan :</strong>
-                                    <input type="text" name="tempat_tujuan" class="form-control" placeholder="Tempat Tujuan" value="{{ $p_kursi->tempat_tujuan }}">
+                                    <input type="text" name="id_" class="form-control" placeholder="Tempat Tujuan" value="{{ $p_kursi->tempat_tujuan }}">
                                 </div>
                                 <div class="form-group">
                                     <strong>Harga :</strong>

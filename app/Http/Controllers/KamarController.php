@@ -32,7 +32,7 @@ class KamarController extends Controller
     {
         $lastid = Kamar::max('id') + 1;
         $get_mitra_id = Auth::user()->id;
-        $get_mitra_jenis = 'Penerbangan';
+        $get_mitra_jenis = 'Perhotelan';
         $status = 'Tersedia';
 
         $request->validate([

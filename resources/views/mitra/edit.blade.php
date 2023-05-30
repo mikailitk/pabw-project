@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Edit MItra</div>
+                <div class="card-header">Edit Mitra</div>
    
                 <div class="card-body">
                     <form action="{{ route('mitras.update', $mitras->id) }}" method="POST">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kursi;
 use App\Models\Pemesanan;
+use App\Models\Tempat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,9 @@ class KursiController extends Controller
      */
     public function create()
     {
-        return view('kursis.create');
+        $tempats = Tempat::all();
+
+        return view('kursis.create', compact('tempats'));
     }
 
     /**
@@ -33,15 +36,15 @@ class KursiController extends Controller
     {
         $lastid = Kursi::max('id') + 1;
         $get_mitra_id = Auth::user()->id;
-        $get_mitra_jenis = 'Perhotelan';
+        $get_mitra_jenis = 'Penerbangan';
         $status = 'Tersedia';
 
         $request->validate([
             'no_kursi' => ['required'],
             'waktu_berangkat' => ['required'],
             'waktu_sampai' => ['required'],
-            'tempat_asal' => ['required'],
-            'tempat_tujuan' => ['required'],
+            'id_tempat_asal' => ['required'],
+            'id_tempat_tujuan' => ['required'],
             'harga' => ['required', 'numeric'],
         ]);
       
@@ -49,8 +52,8 @@ class KursiController extends Controller
             'no_kursi' => $request['no_kursi'],
             'waktu_berangkat' => $request['waktu_berangkat'],
             'waktu_sampai' => $request['waktu_sampai'],
-            'tempat_asal' => $request['tempat_asal'],
-            'tempat_tujuan' => $request['tempat_tujuan'],
+            'id_tempat_asal' => $request['id_tempat_asal'],
+            'id_tempat_tujuan' => $request['id_tempat_tujuan'],
         ]);
 
         Pemesanan::create([

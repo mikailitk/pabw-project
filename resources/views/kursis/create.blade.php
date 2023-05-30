@@ -38,11 +38,19 @@
                                 </div>
                                 <div class="form-group">
                                     <strong>Tempat Asal :</strong>
-                                    <input type="text" name="tempat_asal" class="form-control" placeholder="Tempat Asal">
+                                    <select name="id_tempat_asal" class="form-control">
+                                        @foreach ($tempats as $t)
+                                        <option value="{{ $t->id }}">{{ $t->nama_tempat }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <strong>Tempat Tujuan :</strong>
-                                    <input type="text" name="tempat_tujuan" class="form-control" placeholder="Tempat Tujuan">
+                                    <select name="id_tempat_tujuan" class="form-control">
+                                        @foreach ($tempats as $t)
+                                        <option value="{{ $t->id }}">{{ $t->nama_tempat }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <strong>Harga :</strong>

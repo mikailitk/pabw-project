@@ -16,6 +16,7 @@
                             <th>Waktu Sampai</th>
                             <th>Tempat Asal</th>
                             <th>Tempat Tujuan</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                         @foreach ($kursis as $ku) 
@@ -26,6 +27,7 @@
                             <td>{{ $ku->fromkursi->waktu_sampai }}</td>
                             <td>{{ $ku->fromkursi->id_tempat_asal }}</td>
                             <td>{{ $ku->fromkursi->id_tempat_tujuan }}</td>
+                            <td>{{ $ku->status }}</td>
                             <td>
                                 <form action="{{ route('kursis.destroy', $ku->id) }}" method="POST">
                                     <a class="btn btn-primary" href="{{ route('kursis.edit',$ku->id) }}">Edit</a>
@@ -57,6 +59,7 @@
                             <th>No Ruangan</th>
                             <th>Kapasitas Ruangan</th>
                             <th>Tipe Ruangan</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                         @foreach ($kamars as $ka) 
@@ -65,6 +68,7 @@
                             <td>{{ $ka->fromkamar->no_ruangan ?? ''}}</td>
                             <td>{{ $ka->fromkamar->kapasitas_ruangan ?? ''}}</td>
                             <td>{{ $ka->fromkamar->tipe_ruangan ?? ''}}</td>
+                            <td>{{ $ka->status ?? ''}}</td>
                             <td>
                                 <form action="{{ route('kamars.destroy', $ka->id) }}" method="POST">
                                     <a class="btn btn-primary" href="{{ route('kamars.edit', $ka->id) }}">Edit</a>
