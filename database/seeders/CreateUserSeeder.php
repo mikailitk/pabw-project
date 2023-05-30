@@ -179,26 +179,26 @@ class CreateUserSeeder extends Seeder
             [
                 'id_pemesanan' => 1,
                 'id_user' => 3,
-                'total_bayar' => 150000
-                'status_bayar' => 'Belum Lunas'
-                'tgl_dl' => '2023-05-30 10:00:00'
-                'tgl_bayar' => ''
+                'total_bayar' => 150000,
+                'status_bayar' => 'Belum Lunas',
+                'tgl_dl' => '2023-05-30 10:00:00',
+                'tgl_bayar' => null
             ],
             [
                 'id_pemesanan' => 2,
                 'id_user' => 3,
-                'total_bayar' => 200000
-                'status_bayar' => 'Belum Lunas'
-                'tgl_dl' => '2023-05-30 10:00:00'
-                'tgl_bayar' => ''
+                'total_bayar' => 200000,
+                'status_bayar' => 'Belum Lunas',
+                'tgl_dl' => '2023-05-30 10:00:00',
+                'tgl_bayar' => null
             ],
             [
                 'id_pemesanan' => 3,
                 'id_user' => 3,
-                'total_bayar' => 300000
-                'status_bayar' => 'Lunas'
-                'tgl_dl' => '2023-05-30 10:00:00'
-                'tgl_bayar' => '2023-05-15 10:00:00'
+                'total_bayar' => 300000,
+                'status_bayar' => 'Lunas',
+                'tgl_dl' => '2023-05-30 10:00:00',
+                'tgl_bayar' => '2023-05-15 10:00:00',
             ],
         ];
 
@@ -224,6 +224,10 @@ class CreateUserSeeder extends Seeder
 
         foreach ($pemesanans as $key => $pemesanan) {
             Pemesanan::create($pemesanan);
+        }
+
+        foreach ($transaksis as $key => $transaksis) {
+            Transaksi::create($transaksis);
         }
     }
 }

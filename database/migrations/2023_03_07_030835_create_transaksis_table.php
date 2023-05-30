@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('total_bayar')->unsigned();
             $table->string('status_bayar');
             $table->datetime('tgl_dl');
-            $table->datetime('tgl_bayar');
+            $table->datetime('tgl_bayar')->nullable();
             $table->timestamps();
         });
     }
