@@ -38,7 +38,8 @@ Route::group(['middleware' => 'auth:api'], function() {
 
 // Product Pesawat
 Route::get('/kursi', [ProductController::class, 'getKursi']);
-Route::get('/kursiDetail', [ProductController::class, 'getKursi']);
+Route::get('/kursi-available', [ProductController::class, 'getKursiAvailable']);
 
 Route::get('/kamar', [ProductController::class, 'getKamar']);
+Route::get('/kamar-available', [ProductController::class, 'getKamarAvailable']);
 
