@@ -45,9 +45,9 @@ Route::middleware(['auth', 'user-access:2'])->group(function(){
 
     // wallet control
     Route::get('/users/{id}/wallet', [UsersController::class, 'getwallet'])->name('users.wallet');
-    Route::put('/users/{id}/', [UsersController::class, 'addwallet'])->name('users.addwallet');
+    Route::patch('/users/{id}/addwallet', [UsersController::class, 'addwallet'])->name('users.addwallet');
 
-    // users contrl
+    // users control
     Route::resource('users' , UsersController::class);
     
     // mitra control

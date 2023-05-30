@@ -35,6 +35,7 @@ class MitraController extends Controller
             'id_user' => 'required',
             'nama_mitra' => 'required',
             'nama_brand' => 'required',
+            'jenis_mitra' => 'required',
             'alamat_mitra' => 'required',
             'email_mitra' => 'required',
             'telp_mitra' => 'required',
@@ -42,7 +43,7 @@ class MitraController extends Controller
       
         Mitra::create($request->all());
        
-        return redirect()->route('users.index')->with('success','Success');
+        return redirect()->route('adminc.um')->with('success','Success');
     }
 
     /**
@@ -73,6 +74,7 @@ class MitraController extends Controller
             'id_user' => 'required',
             'nama_mitra' => 'required',
             'nama_brand' => 'required',
+            'jenis_mitra' => 'required',
             'alamat_mitra' => 'required',
             'email_mitra' => 'required',
             'telp_mitra' => 'required',
@@ -82,7 +84,7 @@ class MitraController extends Controller
 
         $mitras->update($request->all());
 
-        return redirect()->route('users.index')->with('success','Success');
+        return redirect()->route('adminc.um')->with('success','Success');
     }
 
     /**
@@ -94,6 +96,6 @@ class MitraController extends Controller
 
         $mitras->delete();
 
-        return redirect()->route('users.index')->with('success','Success');
+        return redirect()->route('adminc.um')->with('success','Success');
     }
 }

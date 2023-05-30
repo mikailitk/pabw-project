@@ -33,6 +33,14 @@
                                     <input type="text" name="nama_brand" class="form-control" placeholder="Nama Brand">
                                 </div>
                                 <div class="form-group">
+                                    <strong>Jenis Mitra :</strong>
+                                    <select name="jenis_mitra" class="form-control">
+                                        <option selected><-- Select Category --></option>
+                                        <option value="Penerbangan">Penerbangan</option>
+                                        <option value="Perhotelan">Perhotelan</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <strong>Nama Pemilik :</strong>
                                     <select name="id_user" class="form-control">
                                         <option selected><-- Select User --></option>

@@ -24,8 +24,8 @@
                             <td>{{ $ku->fromkursi->no_kursi }}</td>
                             <td>{{ $ku->fromkursi->waktu_berangkat }}</td>
                             <td>{{ $ku->fromkursi->waktu_sampai }}</td>
-                            <td>{{ $ku->fromkursi->tempat_asal }}</td>
-                            <td>{{ $ku->fromkursi->tempat_tujuan }}</td>
+                            <td>{{ $ku->fromkursi->id_tempat_asal }}</td>
+                            <td>{{ $ku->fromkursi->id_tempat_tujuan }}</td>
                             <td>
                                 <form action="{{ route('kursis.destroy', $ku->id) }}" method="POST">
                                     <a class="btn btn-primary" href="{{ route('kursis.edit',$ku->id) }}">Edit</a>

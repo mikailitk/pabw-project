@@ -13,6 +13,6 @@ class Kursi extends Model
     protected $table = 'kursis';
 
     protected $fillable = [
-        'no_kursi', 'waktu_berangkat', 'waktu_sampai', 'tempat_asal', 'tempat_tujuan'
+        'no_kursi', 'waktu_berangkat', 'waktu_sampai', 'id_tempat_asal', 'id_tempat_tujuan'
     ];
 }

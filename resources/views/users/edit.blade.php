@@ -44,9 +44,8 @@
                                 <div class="form-group">
                                     <strong>Jenis User :</strong>
                                     <select name="role" class="form-control">
-                                        <option selected><-- Select User --></option>
-                                        <option value="0">User Biasa</option>
-                                        <option value="1">Pemilik Mitra</option>
+                                        <option value="0" {{ $users->role == 0 ? 'selected' : '' }}>User Biasa</option>
+                                        <option value="1" {{ $users->role == 1 ? 'selected' : '' }}>Pemilik Mitra</option>
                                     </select>
                                 </div>
                             </div>

@@ -34,6 +34,13 @@
                                     <input type="text" name="nama_brand" class="form-control" placeholder="Nama Brand" value="{{ $mitras->nama_brand }}">
                                 </div>
                                 <div class="form-group">
+                                    <strong>Pemilik :</strong>
+                                    <select name="jenis_mitra" class="form-control">
+                                        <option value="Penerbangan" {{ $mitras->jenis_mitra == "Penerbangan" ? 'selected' : '' }}>Penerbangan</option>
+                                        <option value="Perhotelan" {{ $mitras->jenis_mitra == "Perhotelan" ? 'selected' : '' }}>Perhotelan</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <strong>Email Mitra :</strong>
                                     <input type="email" name="email_mitra" class="form-control" placeholder="Email Mitra" value="{{ $mitras->email_mitra }}">
                                 </div>

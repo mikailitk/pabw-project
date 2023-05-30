@@ -30,4 +30,5 @@ class Pemesanan extends Model
     {
         return $this->belongsTo(Kamar::class, 'id_produk', 'id');
     }
+
 }

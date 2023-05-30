@@ -8,9 +8,9 @@
                 <div class="card-header">Wallet Control</div>
    
                 <div class="card-body">
-                    <form action="{{ route('users.addwallet', $users) }}" method="POST">
+                    <form action="{{ route('users.addwallet', $users->id) }}" method="POST">
                         @csrf
-                        @method('PUT')
+                        @method('PATCH')
                     
                         <div class="row">
                             @if ($errors->any())
@@ -23,7 +23,6 @@
                                     </ul>
                                 </div>
                             @endif
-                            {{ $users }} 
 
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">

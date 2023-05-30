@@ -75,15 +75,14 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'role' => ['required'],
             'nama_user' => ['required'],
             'email_user' => ['required'],
             'telp_user' => ['required'],
             'alamat_user' => ['required'],
+            'role' => ['required'],
         ]);
 
         $users = User::findOrFail($id);
-
         $users->update($request->all());
 
         return redirect()->route('adminc.um')->with('success','Success');
@@ -108,12 +107,13 @@ class UsersController extends Controller
         return view('users.wallet',compact('users'));
     }
 
-    public function addwallet(Request $request, User $users)
+    public function addwallet(Request $request, $id)
     {
         $request->validate([
             'wallet' => 'required',
         ]);
 
+        $users = User::findOrFail($id);
         $users->update(['wallet' => $request->wallet]);
       
         return redirect()->route('adminc.um')->with('success','Successfuly edit wallet');

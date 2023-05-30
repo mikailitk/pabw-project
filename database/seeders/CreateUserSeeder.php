@@ -102,6 +102,13 @@ class CreateUserSeeder extends Seeder
                 'waktu_berangkat' => '2023-05-30 10:00:00',
                 'waktu_sampai' => '2023-05-30 12:00:00',
             ],
+            [
+                'id_tempat_asal' => 3,
+                'id_tempat_tujuan' => 4,
+                'no_kursi' => 'C1',
+                'waktu_berangkat' => '2023-05-30 10:00:00',
+                'waktu_sampai' => '2023-05-30 13:00:00',
+            ],
         ];
 
         $kamars = [

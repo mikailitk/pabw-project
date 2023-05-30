@@ -25,6 +25,7 @@ class User extends Authenticatable
         'alamat_user',
         'api_token',
         'wallet',
+        'role',
     ];
 
     /**
