@@ -27,12 +27,18 @@ Route::group(['middleware' => 'auth:api'], function() {
     // Mengecek Uang
     Route::get('/wallet', [AuthController::class, 'wallet']);
 
-    // Transaction (Limit 5)
+    // Pemesanan
     Route::get('/pesanan', [TransactionController::class, 'getPesanan']);
 
-    //
+    // Transaction
+    Route::get('/transaction', [TransactionController::class, 'getTransaction']);
+
 });
 
+
+// Product Pesawat
 Route::get('/kursi', [ProductController::class, 'getKursi']);
+Route::get('/kursiDetail', [ProductController::class, 'getKursi']);
+
 Route::get('/kamar', [ProductController::class, 'getKamar']);
 
