@@ -32,4 +32,8 @@ class TransactionController extends Controller
             'data' => $transactions,
         ]);
     }
+
+    public function getTransaction(Request $request){
+
+    }
 }
